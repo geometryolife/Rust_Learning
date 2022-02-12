@@ -1,7 +1,21 @@
 fn main() {
-    // 双精度浮点型
-    let x = 2.0; // f64
+    // 加法
+    let sum = 5 + 10;
+    println!("{}", sum);
 
-    // 单精度浮点型
-    let y: f32 = 3.0; // f32
+    // 减法
+    let difference = 95.5 - 4.3;
+    println!("{}", difference);
+
+    // 乘法
+    let product = 4 * 30;
+    println!("{}", product);
+
+    // 除法
+    let quotient = 56.7 / 32.2;
+    println!("{}", quotient);
+
+    // 取余
+    let remainder = 43 % 5;
+    println!("{}", remainder);
 }
