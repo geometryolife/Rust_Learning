@@ -1,3 +1,7 @@
 fn main() {
-    let guess: u32 = "42".parse().expect("Not a number!"); // 增加类型标注，代码能够正常运行
+    // 双精度浮点型
+    let x = 2.0; // f64
+
+    // 单精度浮点型
+    let y: f32 = 3.0; // f32
 }
