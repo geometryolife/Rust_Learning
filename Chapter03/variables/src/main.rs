@@ -1,8 +1,8 @@
 fn main() {
-    // 布尔类型
-    let t = true;
-    println!("{}", t);
+    // 字符类型
+    let c = 'z';
+    let z = 'Ź';
+    let heart_eyed_cat = '😻';
 
-    let f: bool = false; // 附带了显式类型标注的语句
-    println!("{}", f);
+    println!("{} {} {}", c, z, heart_eyed_cat);
 }
