@@ -1,6 +1,9 @@
 fn main() {
-    let mut x = 5; // 创建可变变量
-    println!("The value of x is: {}", x);
-    x = 6; // 尝试给可变变量二次赋值
+    let x = 5; // 声明变量 x
+
+    let x = x + 1; // 隐藏第一个变量 x
+
+    let x = x * 2; // 隐藏第二个变量 x
+
     println!("The value of x is: {}", x);
 }
