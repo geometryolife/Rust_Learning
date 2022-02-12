@@ -1,3 +1,3 @@
 fn main() {
-    let guess = "42".parse().expect("Not a number!"); // 移除类型标注，编译器无法自动推导出变量的类型
+    let guess: u32 = "42".parse().expect("Not a number!"); // 增加类型标注，代码能够正常运行
 }
