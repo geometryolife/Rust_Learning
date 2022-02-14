@@ -1,3 +1,10 @@
 fn main() {
-    let x = (let y = 6); // 语句无法返回值
+    let x = 5;
+
+    let y = {
+        let x = 3;
+        x + 1 // 表达式，返回 4
+    };
+
+    println!("The value of y is: {}", y);
 }
