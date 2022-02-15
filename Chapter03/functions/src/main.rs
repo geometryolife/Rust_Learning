@@ -1,10 +1,10 @@
 // 函数的返回值
-fn five() -> i32 {
-    5
-}
-
 fn main() {
-    let x = five(); // 等价于 let x = 5;
+    let x = plus_one(5);
 
     println!("The value of x is: {}", x);
+}
+
+fn plus_one(x: i32) -> i32 {
+    x + 1
 }
