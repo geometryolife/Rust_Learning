@@ -1,19 +1,16 @@
 fn main() {
-    let mut number = 3;
+    let a = [10, 20, 30, 40, 50];
+    let mut index = 0;
 
-    while number != 0 {
-        println!("{}!", number);
+    while index < 5 {
+        println!("the value is: {}", a[index]);
 
-        number = number - 1;
+        index = index + 1;
     }
-
-    println!("LIFTOFF!!!");
 }
 
-//   Compiling loops2 v0.1.0 (/home/ubuntu/other/Rust_Learning/Chapter03/loops2)
-//    Finished dev [unoptimized + debuginfo] target(s) in 0.57s
-//     Running `/home/ubuntu/other/Rust_Learning/Chapter03/loops2/target/debug/loops2`
-//3!
-//2!
-//1!
-//LIFTOFF!!!
+//the value is: 10
+//the value is: 20
+//the value is: 30
+//the value is: 40
+//the value is: 50
