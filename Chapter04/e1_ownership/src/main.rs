@@ -3,6 +3,7 @@ fn main() {
     string_type();
     memory_allocation();
     move_action();
+    clone_action();
 }
 
 // 变量作用域
@@ -36,6 +37,7 @@ fn memory_allocation() {
 
 
 // 变量和数据交互的方式：移动（move）
+// 类似浅度拷贝（shallow copy）但不尽相同
 // 示例4-2：将变量 x 绑定的整数值重新绑定到变量 y 上
 fn move_action() {
     // 入栈
@@ -63,3 +65,13 @@ fn move_action() {
 }
 
 
+// 变量和数据交互的方式：克隆
+// 深度拷贝（deep copy），使用 clone 方法
+fn clone_action() {
+    let s1 = String::from("hello");
+    let s2 = s1.clone();
+
+    println!("s1 = {}, s2 = {}", s1, s2);
+    // === Output ===
+    // s1 = hello, s2 = hello
+}
