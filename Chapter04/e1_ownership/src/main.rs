@@ -4,6 +4,7 @@ fn main() {
     memory_allocation();
     move_action();
     clone_action();
+    stack_action();
 }
 
 // 变量作用域
@@ -72,6 +73,20 @@ fn clone_action() {
     let s2 = s1.clone();
 
     println!("s1 = {}, s2 = {}", s1, s2);
+
     // === Output ===
     // s1 = hello, s2 = hello
+}
+
+
+// 栈上数据的复制
+// 编译时能确定大小，数据能够完整存储在栈中 -> 深浅克隆都一样快速（无差别）
+fn stack_action() {
+    let x = 5;
+    let y = x;
+
+    println!("x = {}, y = {}", x, y);
+
+    // === Output ===
+    // x = 5, y = 5
 }
