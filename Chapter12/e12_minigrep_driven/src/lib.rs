@@ -36,18 +36,18 @@ mod tests {
     fn one_result() {
         let query = "duct";
         let contents = "\
-    Rust:
-    safe, fast, productive.
-    Pick three.";
+Rust:
+safe, fast, productive.
+Pick three.";
 
         assert_eq!(vec!["safe, fast, productive."], search(query, contents));
     }
 }
 
 // 【例12-16】定义一个恰好能让测试编译通过的 search 函数
-pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
-    vec![]
-}
+// pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
+//     vec![]
+// }
 
 // === Output ===
 // running 1 test
@@ -66,3 +66,25 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
 //     tests::one_result
 
 // test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
+    // 存储匹配的行
+    let mut results = Vec::new();
+
+    // 【例12-17】逐行遍历 contents 中的内容
+    for line in contents.lines() {
+        // 【例12-18】添加判断当前行是否包含 query 参数指定的字符串的功能
+        if line.contains(query) {
+            // 【例12-19】存储匹配的行并返回
+            results.push(line);
+        }
+    }
+
+    results
+}
+
+// === Output ===
+// running 1 test
+// test tests::one_result ... ok
+
+// test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
