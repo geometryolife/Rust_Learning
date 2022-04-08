@@ -22,7 +22,10 @@ impl Config {
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     let contents = fs::read_to_string(config.filename)?;
 
-    println!("What text:\n{}", contents);
+    // println!("What text:\n{}", contents);
+    for line in search(&config.query, &contents) {
+        println!("{}", line);
+    }
 
     Ok(())
 }
@@ -88,3 +91,22 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
 // test tests::one_result ... ok
 
 // test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+// 已实现迷你版经典命令行工具
+// cargo run frog poem.txt
+// === Output ===
+// Searching for frog
+// In file poem.txt
+// How public, like a frog
+
+// cargo run body poem.txt
+// === Output ===
+// Searching for body
+// In file poem.txt
+// I'm nobody! Who are you?
+// Are you nobody, too?
+// How dreary to be somebody!
+
+// cargo run monomorphization
+// === Output ===
+// Problem parsing arguments: not enough argument
